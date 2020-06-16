@@ -12,9 +12,11 @@ def label_frames(path_config):
     deeplabcut.label_frames(path_config)
 
 def getVideos(view, path, filetype):
-    ### Returns all videos in folder and subfolders
-    ### View can be 'side' or 'top'
-
+    '''
+    Returns all videos in folder and subfolders
+    View can be 'side' or 'top'
+    '''
+    
     videos = []
     # currVids = getVideoNames('all', os.path.expanduser('~/Documents/fyp_videos/AllVideos-joshua-2020-05-23/videos'), '.mov')
     currVids = []
@@ -29,7 +31,9 @@ def getVideos(view, path, filetype):
 
 
 def getVideoNames(view, path, filetype):
-    ### Returns names of videos in folder
+    '''
+    Returns names of videos in folder
+    '''
     videos = []
     for p, subdirs, files in os.walk(path):
         for name in files:
@@ -62,13 +66,8 @@ if __name__ == '__main__':
     else:
         path = '/Users/joshuaramkissoon/Documents/fyp_videos/AllVideos-joshua-2020-05-23/config.yaml'
         # deeplabcut.add_new_videos(path,videos)
-        # extract_frames(path, 'automatic')
+        extract_frames(path, 'automatic')
         label_frames(path)
-        # allTrainShuffle1, shuffle1test = deeplabcut.mergeandsplit(path, trainindex=6, uniform=False)
-        # print('Shuffle 1')
-        # print('All train: ', allTrainShuffle1)
-        # # print('Filtered train: ', shuffletrain)
-        # print('Test: ', shuffle1test)
 
 
 
